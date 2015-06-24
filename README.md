@@ -50,7 +50,7 @@ dfs.sh also configures block size of Hadoop file system (default value is 128mb)
  
 
 ### yarn.sh
-yarn.sh set up configuration for computational node.
+yarn.sh sets configuration for computational node.
 ```
 	HEAPSIZE: 65000 mb (larger 1000 mb for safety)
 		|____ Node manager memory: 64000 mb
@@ -120,6 +120,11 @@ $ yarn jar senti_classify.jar neuro.mre.senti_classify 2 /input/cloth_train_samp
 # Monitor MapReduce job and result
 Open your browserand use the local address:
 http://127.0.0.1:8088/cluster/apps
+
+In this example, input file is split into 24 parts. So we have 24 container for computation, and 1 container for management (AM containter, or Application Management container).
+
+Each container takes 8000 mb. Total 24 * 8000 = 192000 mb.
+The AM container use less memory than computational container (worker container).
 
 ![image018](https://cloud.githubusercontent.com/assets/6707375/8341125/8cd6d010-1a88-11e5-863a-041295fecec9.png)
 
