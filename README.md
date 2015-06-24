@@ -63,6 +63,7 @@ yarn.sh sets configuration for computational node.
 	                                                        |____ Memory for computational data: 6000 mb 
 
  ```
+ Depend on job requirements, we need to set up appropriate memory. Otherwise, the tasks or containers can be crashed, made the job killed or looped.
  
 ![24-06-2015 14-44-17 ch](https://cloud.githubusercontent.com/assets/6707375/8342049/064c969a-1a8f-11e5-909c-7d8df4ca3fb4.png)
  
