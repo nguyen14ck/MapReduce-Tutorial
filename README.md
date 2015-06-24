@@ -25,8 +25,11 @@ There are three necessary files to initialize Hadoop cluster:
 
 	env.sh: contains environmental variables
 	dfs.sh: contains configuration of name node (to store data on Hadoop file system)
-	yarn.sh: contain configuration of computational node (YARN is MapReduce 2.0)
-	and Readme includes scripts to execute tasks
+	yarn.sh: contains configuration of computational node (YARN is MapReduce 2.0)
+	
+Support file:
+
+	Readme.md: includes scripts to execute tasks
 
 Instead of changing directly Hadoop cluster’s configuration, we use these file to set configuration parameters each time we initialize the system.
 
@@ -47,7 +50,7 @@ yarn.sh set up configuration for computational node.
 ```
 	HEAPSIZE: 65000 mb (larger 1000 mb for safety)
 		|____ Node manager memory: 64000 mb
-	                        |____ Container’s memory: from 8000 mb to 16000 mb
+	                        |____ Container’s memory: from 8000 mb to 16000 mb (must be larger than Map + Reduce)
 	                                        |____ Map: 7000 mb
 	                                              	        |____ Java virtual machine memory (opts): 3000 mb
 	                                                        |____ Memory for computational data: 4000 mb
@@ -57,15 +60,19 @@ yarn.sh set up configuration for computational node.
 
  ```
  
+![image009](https://cloud.githubusercontent.com/assets/6707375/8341118/8cb694da-1a88-11e5-9c5e-cff7a5a78aee.png)
  
+![image011](https://cloud.githubusercontent.com/assets/6707375/8341116/8c9eee66-1a88-11e5-903a-d93d548d6d9a.png)
 
+![image012](https://cloud.githubusercontent.com/assets/6707375/8341117/8c9f38c6-1a88-11e5-80e1-a1dcb0ed642d.png)
 
  
-
 # Turn on cluster
  
+Open Readme.md file to view instruction and nitialize name node
 
-Initialize name node
+![image013](https://cloud.githubusercontent.com/assets/6707375/8341122/8cc16e82-1a88-11e5-8a4a-1ba9f998bbb0.png)
+
 ```Shell
 $ cat Readme.md
 $ . env.sh
@@ -73,6 +80,9 @@ $ srun -p GPU -N 10 ./dfs.sh
 ```
 
 Now open another Putty window for computational node
+
+![image015](https://cloud.githubusercontent.com/assets/6707375/8341123/8cc1c666-1a88-11e5-815c-c5ef343d1055.png)
+
 ```Shell
 $ cat Readme.md
 $ . env.sh
@@ -80,14 +90,10 @@ $ srun -p GPU -N 10 ./yarn.sh
 ```
  
 
-
-
-
 And open the third Putty window for proxy to monitor Hadoop Jobs
 
+![image016](https://cloud.githubusercontent.com/assets/6707375/8341124/8cd5355c-1a88-11e5-89c3-685fda13a6fb.png)
  
-
-
 
 # Prepare data and run MapReduce job
 
@@ -105,7 +111,11 @@ $ yarn jar senti_classify.jar neuro.mre.senti_classify 2 /input/cloth_train_samp
 
 # Monitor MapReduce job and result
 
- 
+![image018](https://cloud.githubusercontent.com/assets/6707375/8341125/8cd6d010-1a88-11e5-863a-041295fecec9.png)
+
+![image020](https://cloud.githubusercontent.com/assets/6707375/8341126/8cd823ca-1a88-11e5-9ce7-7fd827bbc3e7.png)
+
+![image022](https://cloud.githubusercontent.com/assets/6707375/8341127/8cdcc5a6-1a88-11e5-8333-d5cb73600cd1.png)
 
  
 
