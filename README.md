@@ -40,7 +40,7 @@ And HEAPSIZE memory for HADOOP. This number must be consistent with values of HE
 ![image007](https://cloud.githubusercontent.com/assets/6707375/8341119/8cba3c20-1a88-11e5-8594-d15f439425d6.png)
 
  
-# dfs.sh
+## dfs.sh
 dfs.sh configures how to run data node for Hadoop cluster.
 The HEAPSIZE here equals previous value in env.sh.
 
