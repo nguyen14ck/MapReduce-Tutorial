@@ -71,7 +71,7 @@ yarn.sh set up configuration for computational node.
  
 # Turn on cluster
  
-Open Readme.md file to view instruction and nitialize name node
+Open Readme.md file to view instruction and initialize name node
 
 ![image013](https://cloud.githubusercontent.com/assets/6707375/8341122/8cc16e82-1a88-11e5-8a4a-1ba9f998bbb0.png)
 
@@ -92,12 +92,16 @@ $ srun -p GPU -N 10 ./yarn.sh
 ```
  
 
-And open the third Putty window for proxy to monitor Hadoop Jobs
+And open the third Putty window for proxy to monitor Hadoop jobs
 
 ![image016](https://cloud.githubusercontent.com/assets/6707375/8341124/8cd5355c-1a88-11e5-89c3-685fda13a6fb.png)
  
 
 # Prepare data and run MapReduce job
+You create input, output folder on hdfs system. And then copy your local data on Linux server to name node (data node - hdfs).
+
+To run MapReduce, use command: yarn  jar  jar_path  input_paht  output_path
+jar file should be on local system, input and output files should be on hdfs
 
 ```Shell
 $ hadoop fs -mkdir /input
@@ -112,6 +116,8 @@ $ yarn jar senti_classify.jar neuro.mre.senti_classify 2 /input/cloth_train_samp
 ```
 
 # Monitor MapReduce job and result
+Open your browserand use the local address:
+http://127.0.0.1:8088/cluster/apps
 
 ![image018](https://cloud.githubusercontent.com/assets/6707375/8341125/8cd6d010-1a88-11e5-863a-041295fecec9.png)
 
