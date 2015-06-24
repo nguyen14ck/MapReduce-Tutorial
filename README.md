@@ -31,7 +31,7 @@ Support file:
 
 	Readme.md: includes scripts to execute tasks
 
-Instead of changing directly Hadoop cluster’s configuration, we use these file to set configuration parameters each time we initialize the system.
+Instead of changing directly Hadoop cluster’s configuration, we use these files to set configuration parameters each time we initialize the system.
 
 ## env.sh
 env.sh sets path to JAVA HOME, HADOOP HOME
@@ -64,7 +64,7 @@ yarn.sh set up configuration for computational node.
 
  ```
  
-![image009](https://cloud.githubusercontent.com/assets/6707375/8341118/8cb694da-1a88-11e5-9c5e-cff7a5a78aee.png)
+![24-06-2015 14-44-17 ch](https://cloud.githubusercontent.com/assets/6707375/8342049/064c969a-1a8f-11e5-909c-7d8df4ca3fb4.png)
  
 ![image011](https://cloud.githubusercontent.com/assets/6707375/8341116/8c9eee66-1a88-11e5-903a-d93d548d6d9a.png)
 
