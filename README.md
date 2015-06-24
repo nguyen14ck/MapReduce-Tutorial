@@ -3,7 +3,7 @@
 This tutorial bases on Dr. Middelkoop’s scripts to introduce how to run MapReduce job on MRI system of University of Missouri, Columbia. The system is a high-performance computational infrastructure for inter-campus research collaboration.
 
 
-# 1.Cluster configuration
+# 1. Cluster configuration
 This Hadoop cluster includes 10 nodes:
 	10 * 128 Gb (72 vcores), Dell R730 with  2 x E5-2660v3 (2.6Ghz 10-Core), CentOS 5
 
@@ -73,7 +73,7 @@ yarn.sh sets configuration for computational node.
 
  
  
-# 2.Turn on cluster
+# 2. Turn on cluster
  
 Open Readme.md file to view instruction and initialize name node
 
@@ -99,7 +99,7 @@ And open the third Putty window for proxy to monitor Hadoop jobs
  
 
 
-# 3.Prepare data and run MapReduce job
+# 3. Prepare data and run MapReduce job
 You create input, output folder on hdfs system. And then copy your local data on Linux server to name node (data node - hdfs).
 
 To run MapReduce, use command: yarn  jar  jar_path  input_paht  output_path
@@ -118,11 +118,11 @@ $ yarn jar senti_classify.jar neuro.mre.senti_classify 2 /input/cloth_train_samp
 ```
 
 
-# 4.Monitor MapReduce job and result
+# 4. Monitor MapReduce job and result
 Open your browserand use the local address:
 http://127.0.0.1:8088/cluster/apps
 
-In this example, input file was split into 24 parts. So we have 24 containers for computation, and 1 container for management (AM containter, or Application Management container). These 25 containers are still smaller than the max allowance (72). So all task were run completely in parallel.
+In this example, input file was split into 24 parts. So we have 24 containers for computation, and 1 container for management (AM containter, or Application Management container). These 25 containers are still smaller than the max allowance (72). So all tasks were run completely in parallel.
 
 Each container took 1 vcore and 8000 mb. Total 24 * 8000 = 192000 mb are used.
 The AM container used less memory than other computational container (worker container). We can see memory used about 195 Gb.
