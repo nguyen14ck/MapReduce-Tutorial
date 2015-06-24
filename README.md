@@ -46,7 +46,7 @@ The HEAPSIZE here equals previous value in env.sh.
 
 dfs.sh also configures block size of Hadoop file system (default value is 128mb). This size will decide how many parts each input file will be split to handle in parallel.
  
- ![image008](https://cloud.githubusercontent.com/assets/6707375/8341120/8cbcbdb0-1a88-11e5-8f27-0730cab83988.png)
+![24-06-2015 14-44-17 ch](https://cloud.githubusercontent.com/assets/6707375/8342049/064c969a-1a8f-11e5-909c-7d8df4ca3fb4.png)
  
 
 ### yarn.sh
@@ -65,7 +65,7 @@ yarn.sh sets configuration for computational node.
  ```
  Depend on job requirements, we need to set up appropriate memory. Otherwise, the tasks or containers can be crashed, made the job killed or looped.
  
-![24-06-2015 14-44-17 ch](https://cloud.githubusercontent.com/assets/6707375/8342049/064c969a-1a8f-11e5-909c-7d8df4ca3fb4.png)
+![24-06-2015 14-47-53 ch](https://cloud.githubusercontent.com/assets/6707375/8342596/e5319e0c-1a92-11e5-8e3b-d1d2bd8a12fa.png)
  
 ![image011](https://cloud.githubusercontent.com/assets/6707375/8341116/8c9eee66-1a88-11e5-903a-d93d548d6d9a.png)
 
