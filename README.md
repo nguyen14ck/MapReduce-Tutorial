@@ -33,19 +33,21 @@ Support file:
 
 Instead of changing directly Hadoop cluster’s configuration, we use these file to set configuration parameters each time we initialize the system.
 
-env.sh setup path to JAVA HOME, HADOOP HOME
+## env.sh
+env.sh sets path to JAVA HOME, HADOOP HOME
 And HEAPSIZE memory for HADOOP. This number must be consistent with values of HEAPSIZE in file dfs.sh and yarn.sh
 
 ![image007](https://cloud.githubusercontent.com/assets/6707375/8341119/8cba3c20-1a88-11e5-8594-d15f439425d6.png)
  
-dfs.sh configures how to run data node for Hadoop cluster
+# dfs.sh
+dfs.sh configures how to run data node for Hadoop cluster.
 The HEAPSIZE here equals previous value in env.sh.
 
 dfs.sh also configures block size of Hadoop file system (default value is 128mb). This size will decide how many parts each input file will be split to handle in parallel.
  
  ![image008](https://cloud.githubusercontent.com/assets/6707375/8341120/8cbcbdb0-1a88-11e5-8f27-0730cab83988.png)
 
-
+### yarn.sh
 yarn.sh set up configuration for computational node.
 ```
 	HEAPSIZE: 65000 mb (larger 1000 mb for safety)
