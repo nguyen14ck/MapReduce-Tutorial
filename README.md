@@ -38,6 +38,7 @@ env.sh sets path to JAVA HOME, HADOOP HOME
 And HEAPSIZE memory for HADOOP. This number must be consistent with values of HEAPSIZE in file dfs.sh and yarn.sh
 
 ![image007](https://cloud.githubusercontent.com/assets/6707375/8341119/8cba3c20-1a88-11e5-8594-d15f439425d6.png)
+
  
 # dfs.sh
 dfs.sh configures how to run data node for Hadoop cluster.
@@ -46,6 +47,7 @@ The HEAPSIZE here equals previous value in env.sh.
 dfs.sh also configures block size of Hadoop file system (default value is 128mb). This size will decide how many parts each input file will be split to handle in parallel.
  
  ![image008](https://cloud.githubusercontent.com/assets/6707375/8341120/8cbcbdb0-1a88-11e5-8f27-0730cab83988.png)
+ 
 
 ### yarn.sh
 yarn.sh set up configuration for computational node.
@@ -69,11 +71,10 @@ yarn.sh set up configuration for computational node.
 ![image012](https://cloud.githubusercontent.com/assets/6707375/8341117/8c9f38c6-1a88-11e5-80e1-a1dcb0ed642d.png)
 
  
+ 
 # Turn on cluster
  
 Open Readme.md file to view instruction and initialize name node
-
- ![image001](https://cloud.githubusercontent.com/assets/6707375/8341079/4790d988-1a88-11e5-95a8-fad5ab51a692.png)
 
 ```Shell
 $ cat Readme.md
@@ -83,7 +84,7 @@ $ srun -p GPU -N 10 ./dfs.sh
 
 Now open another Putty window for computational node
 
-![image015](https://cloud.githubusercontent.com/assets/6707375/8341123/8cc1c666-1a88-11e5-815c-c5ef343d1055.png)
+ ![image001](https://cloud.githubusercontent.com/assets/6707375/8341079/4790d988-1a88-11e5-95a8-fad5ab51a692.png)
 
 ```Shell
 $ cat Readme.md
@@ -91,11 +92,11 @@ $ . env.sh
 $ srun -p GPU -N 10 ./yarn.sh
 ```
  
-
 And open the third Putty window for proxy to monitor Hadoop jobs
 
 ![image016](https://cloud.githubusercontent.com/assets/6707375/8341124/8cd5355c-1a88-11e5-89c3-685fda13a6fb.png)
  
+
 
 # Prepare data and run MapReduce job
 You create input, output folder on hdfs system. And then copy your local data on Linux server to name node (data node - hdfs).
@@ -114,6 +115,7 @@ $ hadoop fs -copyFromLocal cloth_test_sample.txt /input
 
 $ yarn jar senti_classify.jar neuro.mre.senti_classify 2 /input/cloth_train_sample1.txt /input/cloth_train_sample2.txt /input/cloth_test_sample.txt /output/cloth_output_sample
 ```
+
 
 # Monitor MapReduce job and result
 Open your browserand use the local address:
