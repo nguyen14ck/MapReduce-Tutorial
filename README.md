@@ -123,6 +123,14 @@ $ hadoop fs -copyFromLocal cloth_test_sample.txt /input
 
 ```
 
+Clone your code on Github to build MapReduce program:
+
+```Shelll
+git clone git@github.com:nguyen14ck/neuro_classifier
+
+mvn clean dependency:copy-dependencies package
+```
+
 To run MapReduce, use this command: yarn  jar  jar_path  input_paht  output_path
 jar file should be on local system, input and output files should be on hdfs
 
