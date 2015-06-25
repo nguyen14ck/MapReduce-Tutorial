@@ -128,10 +128,10 @@ Clone your code on Github to build MapReduce program:
 
 ```Shelll
 # Clone
-git clone git@github.com:nguyen14ck/neuro_classifier
+$ git clone git@github.com:nguyen14ck/neuro_classifier
 
 # Build
-mvn clean dependency:copy-dependencies package
+$ mvn clean dependency:copy-dependencies package
 ```
 
 To run MapReduce, use this command: yarn  jar  jar_path  input_paht  output_path
