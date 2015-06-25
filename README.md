@@ -55,15 +55,15 @@ dfs.sh also configures block size of Hadoop file system (default value is 128mb)
 ### yarn.sh
 yarn.sh sets configuration for computational node.
 ```
-	HEAPSIZE: 65000 mb (larger 1000 mb than node memory for safety)
-		|____ Node manager memory: 64000 mb (each node can have many computational containers)
-	                        |____ Container’s memory: from 8000 mb to 16000 mb (must be larger than Map + Reduce memory)
-	                                        |____ Map: 7000 mb
-	                                              	        |____ Java virtual machine memory (opts): 3000 mb
-	                                                        |____ Memory for computational data: 4000 mb
-	                                        |____ Reduce: 9000 mb
-	                                                        |____ Java virtual machine memory (opts): 3000 mb
-	                                                        |____ Memory for computational data: 6000 mb 
+HEAPSIZE: 65000 mb (larger 1000 mb than node memory for safety)
+	|____ Node manager memory: 64000 mb (each node can have many computational containers)
+                        |____ (Computational) container memory: from 8000 mb to 16000 mb (must be larger than Map + Reduce memory)
+                                        |____ Map: 7000 mb
+                                              	        |____ Java virtual machine memory (opts): 3000 mb
+                                                        |____ Memory for computational data: 4000 mb
+                                        |____ Reduce: 9000 mb
+                                                        |____ Java virtual machine memory (opts): 3000 mb
+                                                        |____ Memory for computational data: 6000 mb 
 
  ```
 Depend on job requirements, we need to set up appropriate memory. Otherwise, the tasks or containers can be crashed, made the job killed or looped.
