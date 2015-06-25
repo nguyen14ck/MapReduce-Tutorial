@@ -30,6 +30,9 @@ There are three necessary files to initialize Hadoop cluster:
 Support file:
 
 	Readme.md: includes scripts to execute tasks
+	
+Before setting configuration, if you want learn more about MapReduce 2.0 (YARN), you can follow this link:
+	http://ercoppa.github.io/HadoopInternals/AnatomyMapReduceJob.html
 
 Instead of changing directly Hadoop cluster’s configuration, we use these files to set configuration parameters each time we initialize the system.
 
@@ -63,7 +66,7 @@ yarn.sh sets configuration for computational node.
 	                                                        |____ Memory for computational data: 6000 mb 
 
  ```
- Depend on job requirements, we need to set up appropriate memory. Otherwise, the tasks or containers can be crashed, made the job killed or looped.
+Depend on job requirements, we need to set up appropriate memory. Otherwise, the tasks or containers can be crashed, made the job killed or looped.
  
 ![24-06-2015 14-47-53 ch](https://cloud.githubusercontent.com/assets/6707375/8342596/e5319e0c-1a92-11e5-8e3b-d1d2bd8a12fa.png)
  
@@ -106,14 +109,17 @@ To run MapReduce, use command: yarn  jar  jar_path  input_paht  output_path
 jar file should be on local system, input and output files should be on hdfs
 
 ```Shell
+# Create input and output folder
 $ hadoop fs -mkdir /input
 $ hadoop fs -mkdir /output
 $ hadoop fs -mkdir /output/cloth_output_sample
 
+# Copy data to input folder
 $ hadoop fs -copyFromLocal cloth_train_sample1.txt /input
 $ hadoop fs -copyFromLocal cloth_train_sample2.txt /input
 $ hadoop fs -copyFromLocal cloth_test_sample.txt /input
 
+# Run job
 $ yarn jar senti_classify.jar neuro.mre.senti_classify 2 /input/cloth_train_sample1.txt /input/cloth_train_sample2.txt /input/cloth_test_sample.txt /output/cloth_output_sample
 ```
 
