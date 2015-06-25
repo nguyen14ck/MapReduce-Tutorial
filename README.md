@@ -32,7 +32,7 @@ Support file:
 	Readme.md: includes scripts to execute tasks
 	
 ## MapReduce 2.0 (YARN)
-Before setting configuration, if you want learn more about MapReduce 2.0 (YARN), you can follow this link:
+Before setting configuration, if you want to learn more about MapReduce 2.0 (YARN), you can follow this link:
 	http://ercoppa.github.io/HadoopInternals/AnatomyMapReduceJob.html
 
 Instead of changing directly Hadoop cluster’s configuration, we use these files to set configuration parameters each time we initialize the system.
