@@ -103,10 +103,12 @@ And open the third Putty window for proxy to monitor Hadoop jobs
 
 
 # 3. Prepare data and run MapReduce job
-You create input, output folder on hdfs system. And then copy your local data on Linux server to name node (data node - hdfs).
 
-To run MapReduce, use command: yarn  jar  jar_path  input_paht  output_path
-jar file should be on local system, input and output files should be on hdfs
+Open the last Putty window for you to work
+
+ ![image001](https://cloud.githubusercontent.com/assets/6707375/8341079/4790d988-1a88-11e5-95a8-fad5ab51a692.png)
+ 
+You create input, output folder on hdfs system. And then copy your local data on Linux server to name node (data node - hdfs).
 
 ```Shell
 # Create input and output folder
@@ -119,6 +121,12 @@ $ hadoop fs -copyFromLocal cloth_train_sample1.txt /input
 $ hadoop fs -copyFromLocal cloth_train_sample2.txt /input
 $ hadoop fs -copyFromLocal cloth_test_sample.txt /input
 
+```
+
+To run MapReduce, use this command: yarn  jar  jar_path  input_paht  output_path
+jar file should be on local system, input and output files should be on hdfs
+
+```Shell
 # Run job
 $ yarn jar senti_classify.jar neuro.mre.senti_classify 2 /input/cloth_train_sample1.txt /input/cloth_train_sample2.txt /input/cloth_test_sample.txt /output/cloth_output_sample
 ```
