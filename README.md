@@ -133,6 +133,7 @@ mvn clean dependency:copy-dependencies package
 ```
 
 To run MapReduce, use this command: yarn  jar  jar_path  input_paht  output_path
+
 jar file should be on local system, input and output files should be on hdfs
 
 ```Shell
