@@ -128,10 +128,10 @@ $ yarn jar senti_classify.jar neuro.mre.senti_classify 2 /input/cloth_train_samp
 Open your browserand use the local address:
 http://127.0.0.1:8088/cluster/apps
 
-In this example, input file was split into 24 parts. So we have 24 containers for computation, and 1 container for management (AM containter, or Application Management container). These 25 containers are still smaller than the max allowance (72). So all tasks were run completely in parallel.
+In this example, input file was split into 24 parts. So we have 24 containers for computation, and 1 container for management (AM containter, or Application Master container). These 25 containers are still smaller than the max allowance (72). So all tasks were run completely in parallel.
 
-Each container took 1 vcore and 8000 mb. Total 24 * 8000 = 192000 mb are used.
-The AM container used less memory than other computational container (worker container). We can see memory used about 195 Gb.
+Each container took 1 vcore and 8000 mb. And 24 * 8000 = 192000 mb are used.
+The AM container used less memory than other computational container (worker container). The memory used is about 195 Gb.
 
 Finally, the job completed successfully after 50 minutes 07 seconds.
 
