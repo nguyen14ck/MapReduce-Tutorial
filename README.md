@@ -7,9 +7,11 @@ This tutorial bases on Dr. Middelkoop’s scripts to introduce how to run MapRed
 This Hadoop cluster includes 10 nodes:
 	10 * 128 Gb (72 vcores), Dell R730 with  2 x E5-2660v3 (2.6Ghz 10-Core), CentOS 5
 
-First, you use Putty to connect to Linux Server, and logon with your mri account.
+First, you use Putty to connect to Linux Server, and logon with your mri account and your private key.
  
  ![image001](https://cloud.githubusercontent.com/assets/6707375/8341079/4790d988-1a88-11e5-95a8-fad5ab51a692.png)
+ 
+ 
  
  ![image003](https://cloud.githubusercontent.com/assets/6707375/8341114/8c823726-1a88-11e5-8f44-e21e72bb47ad.png)
 
@@ -97,13 +99,29 @@ $ . env.sh
 $ srun -p GPU -N 10 ./yarn.sh
 ```
  
-And open the third Putty window for proxy to monitor Hadoop jobs
+
+# 3. Forward port to monitor remote job on local machine (by web browser)
+
+## a. On Windows
+
+Open the third Putty window for proxy to monitor Hadoop jobs
 
 ![image016](https://cloud.githubusercontent.com/assets/6707375/8341124/8cd5355c-1a88-11e5-89c3-685fda13a6fb.png)
+
+Input port 8088 you want to forward on local computer, and remote server
+
+
  
+## b. On Linux
+
+Open Terminal and use this command:
+
+```Shell
+$ slogin -L 8088:c11u21:8088 mri1.rnet.missouri.edu
+```
 
 
-# 3. Prepare data and run MapReduce job
+# 4. Prepare data and run MapReduce job
 
 Open the last Putty window for you to work
 
@@ -144,7 +162,7 @@ $ yarn jar senti_classify.jar neuro.mre.senti_classify 2 /input/cloth_train_samp
 ```
 
 
-# 4. Monitor MapReduce job and result
+# 5. Monitor MapReduce job and result
 Open your browserand use the local address:
 http://127.0.0.1:8088/cluster/apps
 
