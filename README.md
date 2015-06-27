@@ -3,6 +3,7 @@
 This tutorial bases on Dr. Middelkoop’s scripts to introduce how to run MapReduce job on MRI system of University of Missouri, Columbia. The system is a high-performance computational infrastructure for inter-campus research collaboration.
 
 
+
 # 1. Cluster configuration
 This Hadoop cluster includes 10 nodes:
 	10 * 128 Gb (72 vcores), Dell R730 with  2 x E5-2660v3 (2.6Ghz 10-Core), CentOS 5
@@ -79,6 +80,7 @@ Depend on job requirements, we need to set up appropriate memory. Otherwise, the
 
  
  
+ 
 # 2. Turn on cluster
  
 Open Readme.md file to view instruction and initialize name node
@@ -98,6 +100,7 @@ $ cat Readme.md
 $ . env.sh
 $ srun -p GPU -N 10 ./yarn.sh
 ```
+ 
  
 
 # 3. Forward port to monitor remote job on local machine (by web browser)
@@ -119,6 +122,7 @@ Open Terminal and use this command:
 ```Shell
 $ slogin -L 8088:c11u21:8088 mri1.rnet.missouri.edu
 ```
+
 
 
 # 4. Prepare data and run MapReduce job
@@ -163,7 +167,13 @@ $ yarn jar senti_classify.jar neuro.mre.senti_classify 2 /input/cloth_train_samp
 
 
 # 5. Monitor MapReduce job and result
-Open your browserand use the local address:
+
+After input and excute job on master node, the console screen displays job id, number of splits, and progress as following image:
+
+![image018](https://cloud.githubusercontent.com/assets/6707375/8341125/8cd6d010-1a88-11e5-863a-041295fecec9.png)
+
+
+Open your browser and use the local address:
 http://127.0.0.1:8088/cluster/apps
 
 In this example, input file was split into 24 parts. So we have 24 containers for computation, and 1 container for management (AM containter, or Application Master container). These 25 containers are still smaller than the max allowance (72). So all tasks were run completely in parallel.
@@ -171,11 +181,10 @@ In this example, input file was split into 24 parts. So we have 24 containers fo
 Each container took 1 vcore and 8000 mb. And 24 * 8000 = 192000 mb are used.
 The AM container used less memory than other computational container (worker container). The memory used is about 195 Gb.
 
-Finally, the job completed successfully after 50 minutes 07 seconds.
-
-![image018](https://cloud.githubusercontent.com/assets/6707375/8341125/8cd6d010-1a88-11e5-863a-041295fecec9.png)
-
 ![image020](https://cloud.githubusercontent.com/assets/6707375/8341126/8cd823ca-1a88-11e5-9ce7-7fd827bbc3e7.png)
+
+
+Finally, the job completed successfully after 50 minutes 07 seconds.
 
 ![image022](https://cloud.githubusercontent.com/assets/6707375/8341127/8cdcc5a6-1a88-11e5-8333-d5cb73600cd1.png)
 
