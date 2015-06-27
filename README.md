@@ -12,7 +12,7 @@ First, you use Putty to connect to Linux Server, and logon with your mri account
  
  ![image001](https://cloud.githubusercontent.com/assets/6707375/8341079/4790d988-1a88-11e5-95a8-fad5ab51a692.png)
  
- 
+ ![private key](https://cloud.githubusercontent.com/assets/6707375/8390315/73201f7e-1c53-11e5-81c4-413974885c9d.png)
  
  ![image003](https://cloud.githubusercontent.com/assets/6707375/8341114/8c823726-1a88-11e5-8f44-e21e72bb47ad.png)
 
@@ -86,6 +86,8 @@ Depend on job requirements, we need to set up appropriate memory. Otherwise, the
 ## a. Name node
 Form the current Putty windows, open Readme.md file to view instruction and initialize name node
 
+![readme md](https://cloud.githubusercontent.com/assets/6707375/8390316/7b45075a-1c53-11e5-8b90-aec5d92e128e.png)
+
 ```Shell
 $ cat Readme.md
 $ . env.sh
@@ -115,6 +117,7 @@ Open the third Putty window for proxy to monitor Hadoop jobs
 
 Input port 8088 you want to forward on local computer, and remote server
 
+![port forwarding](https://cloud.githubusercontent.com/assets/6707375/8390318/9be840f8-1c53-11e5-84c7-f642b7147937.png)
 
  
 ## b. On Linux
