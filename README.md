@@ -9,6 +9,7 @@ This Hadoop cluster includes 10 nodes:
 	10 * 128 Gb (72 vcores), Dell R730 with  2 x E5-2660v3 (2.6Ghz 10-Core), CentOS 5
 
 First, you use Putty to connect to Linux Server, and logon with your mri account and your private key.
+(http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
  
  ![image001](https://cloud.githubusercontent.com/assets/6707375/8341079/4790d988-1a88-11e5-95a8-fad5ab51a692.png)
  
