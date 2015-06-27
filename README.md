@@ -83,7 +83,8 @@ Depend on job requirements, we need to set up appropriate memory. Otherwise, the
  
 # 2. Turn on cluster
  
-Open Readme.md file to view instruction and initialize name node
+## a. Name node
+Form the current Putty windows, open Readme.md file to view instruction and initialize name node
 
 ```Shell
 $ cat Readme.md
@@ -91,6 +92,7 @@ $ . env.sh
 $ srun -p GPU -N 10 ./dfs.sh
 ```
 
+## b. Computational node
 Now open another Putty window for computational node
 
  ![image001](https://cloud.githubusercontent.com/assets/6707375/8341079/4790d988-1a88-11e5-95a8-fad5ab51a692.png)
